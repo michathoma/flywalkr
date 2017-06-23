@@ -1,4 +1,4 @@
-read.esm<-function(directory,header=TRUE){
+read_esm <- function(directory, header=TRUE, delimiter = ";", parser = "_"){
 
 ##### will read all .csv files within given directory and combine to a new dataframe
 ##### IMPORTANT: .csv have to be exported with ; as separator (default in EXCEL, no worries there), decimal separator must be "."
@@ -10,14 +10,14 @@ nfile<-dir()
 i.lf<-1:length(dir())
 combdata <- numeric()
 
-for (i in i.lf) 
+for (i in i.lf)
 {
 if (header==FALSE) {
-pcd <- read.csv(nfile[i],sep=";")
+pcd <- read.csv(nfile[i],sep=delimiter)
 
 #### renaming starts here, split filename, the part before the _ will be used...
 
-exp<-strsplit(nfile[i],"_")[[1]][1]
+exp<-strsplit(nfile[i],parser)[[1]][1]
 
 #### ...and rename by pasting experiment plus fly nr. from the esm
 
@@ -27,10 +27,10 @@ combdata <- rbind(combdata, pcd)
 print(nfile[i])
 }
 else {
-pcd <- read.csv(nfile[i],header==TRUE,sep=";")
+pcd <- read.csv(nfile[i],header==TRUE,sep=delimiter)
 
 
-exp<-strsplit(nfile[i],"_")[[1]][1]
+exp<-strsplit(nfile[i],parser)[[1]][1]
 pcd$fly.nr<-paste(rep(exp,dim(pcd)[1]),pcd$fly.nr,sep="_")
 
 combdata <- rbind(combdata, pcd)
