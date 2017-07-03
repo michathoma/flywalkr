@@ -22,18 +22,18 @@ esm.calc <-function(directory, tubeDelay, windspeed, interval, before.after, pri
 
   for (i in i.lf){
 
-    object <- read.table(nfile[i], sep=";", header=T, fill=T)
-    object[object == "NaN"]<-NA
+    object <- read.table(nfile[i], sep=";", header = T, fill = T)
+    object[object == "NaN"] <- NA
 
     #### 1st step: find linear function of odor travel
 
-    odor <- object[,3]
+    odor <- object[, 3]
     od <- odor - odor[1]
-    time <- object[,2]/1000
-    odor.on <- which(od!=0)[1]
+    time <- object[, 2] / 1000
+    odor.on <- which(od != 0)[1]
     odor.start <- time[odor.on]
-    odor.in <- odor.start+tubeDelay
-    rel.time <- time-odor.start
+    odor.in <- odor.start + tubeDelay
+    rel.time <- time - odor.start
 
 
 
