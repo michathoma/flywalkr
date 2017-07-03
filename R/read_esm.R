@@ -1,7 +1,9 @@
 #' Read all esm-csv in a gven directory.
-#' Will read all esm files in the given directory and concatenate them in single.
+#'
+#' Will read all esm files in the given directory and concatenate them in single
 #' \code{data.frame}. Filenames will be used to keep track of individual flies
 #' in different experiments carrying the same within-experiment number.
+#'
 #' @param directory directory containing extended speed matrizes
 #' @param delimiter delimiter used in extended speed matrizes, defaults to ";"
 #' @param parser pattern to parse file names for naming of individual flies
