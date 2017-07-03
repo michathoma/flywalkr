@@ -1,38 +1,5 @@
 esm.calc <-function(directory, tubeDelay, windspeed, interval, before.after, priority.interval){
 
-  ###### Version 1.0; 131030
-
-  ###### variable legend: directory        ... directory where data-files are
-  ###### stored tubeDelay        ... delay between valve opening and odor
-  ###### entering glass-tubes in seconds windspeed        ... air flow within
-  ###### glass tubes in cm/s interval         ... frequency of analysis -> if
-  ###### analysis @ 10Hz -> interval = 0.1s before.after     ... time before and
-  ###### after meeting time to be analyzed aim              ... time vector for
-  ###### interpolated x-positions speed.aim        ... time vector for
-  ###### x-velocities (-> also: header of extended speed matrix) esm
-  ###### ... extended speed matrix, the output data.frame nfile            ...
-  ###### vector of filenames of files contained in directory i.lf
-  ###### ... running index for the loop analyzing all files within directory
-  ###### data             ... single flywalk 2.0 output-file odor
-  ###### ... column in data containing odor information od               ...
-  ###### odor vector modified to detect changes (if od != 0 -> odor has changed)
-  ###### time             ... running time within data-file in seconds odor.on
-  ###### ... index of first timepoint of open valve odor.start       ... first
-  ###### timepoint of open valve odor.in          ... odor enters glasstubes
-  ###### odor.intercept   ... intercept of the linear function of odor travel
-  ###### odor.x           ... x-positions of odor @ time j.fly.x          ...
-  ###### column numbers of x-coordinates of flies fly.x            ...
-  ###### x-coordinates of fly of interest diff.fly.odor    ... differences
-  ###### between x-coordinates of fly and odor, will be negative when odor has
-  ###### passed the fly first            ... index of first odor contact excl1&2
-  ###### ... situations to be excluded: fly not tracked during or 1 frame before
-  ###### meeting time ID.odor.pulse    ... data.frame for fly ID, odor and pulse
-  ###### number speed.matrix     ... matrix for calculated speed meetingTime
-  ###### ... time in experiment of encounter with odor new.time         ...
-  ###### Experimental time - meetingTime -> Meeting time will be set to 0
-  ###### interpolated.x   ... interpolated x-coordinates of flies in the time
-  ###### and frequency specified in aim speed            ... pretty obvious
-
   aim.start <- -before.after
   aim.end <- before.after
   aim <- seq(aim.start, aim.end, interval)
