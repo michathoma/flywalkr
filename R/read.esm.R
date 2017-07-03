@@ -1,6 +1,8 @@
 #' Read all esm-csv in a gven directory.
 #'
-#' Will read all esm files in the given directory and concatenate them in single \code{data.frame}. Filenames will be used to keep track of individual flies in different experiments carrying the same within-experiment number.
+#' Will read all esm files in the given directory and concatenate them in single
+#' \code{data.frame}. Filenames will be used to keep track of individual flies
+#' in different experiments carrying the same within-experiment number.
 #'
 #'
 read_esm <- function(directory, header=TRUE, delimiter = ";", parser = "_"){
