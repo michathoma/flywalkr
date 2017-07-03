@@ -1,3 +1,13 @@
+#' Calculate mean response time-course per fly and odor.
+#'
+#' \code{mean.within.all.1to7} calculates the mean response time-course per fly and odor.
+#' Rows containing missing values in the interval between 1s before and 7s after odor encounter will be removed.
+#' Results are written to \code{within_fly_mean_traces.csv} and a heatmap respresentation is exported (\code{mean_speed_heatmap.pdf}).
+#'
+#' @param object a \code{data.frame} as produced by \code{read.esm}
+#' @return a \code{data.frame} containing mean response time-courses per fly and odor
+#'
+
 mean.within.all.1to7 <- function(object){
 
   data.short <- data.frame(cbind(object[,1:3], object[,94:173]))
