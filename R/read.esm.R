@@ -4,7 +4,8 @@ read.esm<-function(directory,header=TRUE){
 ##### IMPORTANT: .csv have to be exported with ; as separator (default in EXCEL, no worries there), decimal separator must be "."
 ##### Also IMPORTANT: file names have to be in the format: e.g. 071210a_..., as the first part will be used to rename the flies (in case of multiple experiments)
 
-
+olddir <- getwd()
+  
 setwd(directory)
 nfile<-dir()
 i.lf<-1:length(dir())
@@ -40,9 +41,7 @@ print(nfile[i])
 
 combdata<-combdata[order(combdata$odour,combdata$fly.nr),]
 
-
-#### setwd path has to be changed individually for different users/computers
-
-setwd("C:/Documents and Settings/tretzke/My Documents/")
+setwd(olddir)
+  
 return(combdata)
 }
