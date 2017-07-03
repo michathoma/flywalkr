@@ -1,4 +1,14 @@
-plot.activity.all.median.1to7 <- function(object){
+#' Calculate and plot median activity across flies.
+#'
+#' \code{plot_activity_all_median_1to7} calculates the mean activity within flies and calculates and plots the median activity time-courses across flies around odor encounter.
+#' Rows containing missing values in the interval between 1s before and 7s after odor encounter will be removed.
+#' Activity timecourses for individual flies are written to \code{within_fly_activity.csv} and a overview plot is exported (\code{activity_overview.pdf}).
+#'
+#' @param object a \code{data.frame} as produced by \code{read.esm}
+#' @return a \code{data.frame} containing mean activity time-courses per fly and odor
+#'
+
+plot_activity_all_median_1to7 <- function(object){
 
   data.short <- data.frame(cbind(object[, 1:3], object[, 94:173]))
 
