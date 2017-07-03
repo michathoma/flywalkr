@@ -8,4 +8,8 @@ Depends:
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+<<<<<<< HEAD
 RoxygenNote: 5.0.1
+=======
+RoxygenNote: 6.0.1
+>>>>>>> 3f25a7675a734d93be25fde6369d8f27e3da2465

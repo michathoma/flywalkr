@@ -4,8 +4,13 @@
 #' \code{data.frame}. Filenames will be used to keep track of individual flies
 #' in different experiments carrying the same within-experiment number.
 #'
-#'
-read_esm <- function(directory, header=TRUE, delimiter = ";", parser = "_"){
+#' @param directory directory containing extended speed matrizes
+#' @param delimiter delimiter used in extended speed matrizes, defaults to ";"
+#'   (output from German MS Excel)
+#' @param parser pattern to parse file names for naming of individual flies
+#' @return \code{data.frame} containing combined data
+
+read_esm <- function(directory, delimiter = ";", parser = "_"){
 
   oldwd <- getwd()
   setwd(directory)
@@ -16,7 +21,7 @@ read_esm <- function(directory, header=TRUE, delimiter = ";", parser = "_"){
   combdata <- numeric()
 
   for (i in file_index){
-    file_i <- read.csv(files[i], header==TRUE, sep=delimiter)
+    file_i <- read.csv(files[i], header = TRUE, sep = delimiter)
     experiment <- strsplit(files[i],parser)[[1]][1]
     file_i$fly.nr <- paste(rep(experiment,dim(file_i)[1]),file_i$fly.nr,sep="_")
     combdata <- rbind(combdata, file_i)
