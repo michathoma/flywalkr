@@ -1,4 +1,4 @@
-plot.trace.all.1to7 <- function(object){
+plot_trace_all_1to7 <- function(object){
 
   colnames(object) <- c("fly.nr", "odour", "pulse", seq(-9.95, 9.95, 0.1))
   data.short <- data.frame(cbind(object[, 1:3], object[, 94:173]))

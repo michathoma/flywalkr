@@ -1,4 +1,4 @@
-response.per.pulse<-function(object){
+response_per_pulse<-function(object){
 
   data.short <- data.frame(cbind(object[, 1:3], object[, 104:144]))
 

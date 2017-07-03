@@ -1,13 +1,13 @@
 #' Calculate distance covered within 4s after odor encounter.
 #'
-#' \code{distance.4s.calc} calculates the distance covered within 4s after odor encounter.
+#' \code{distance_4s_calc} calculates the distance covered within 4s after odor encounter.
 #' Rows containing missing values in the first 4s after odor encounter will be removed.
 #' Results are written to \code{responses.csv}.
 #'
 #' @param object a \code{data.frame} as produced by \code{read.esm}
 #' @return a \code{data.frame} containing net replacement within 4s per fly and odor
 #'
-distance.4s.calc <- function(object){
+distance_4s_calc <- function(object){
 
   data.short <- data.frame(cbind(object[,1:3], object[,104:144]))
 

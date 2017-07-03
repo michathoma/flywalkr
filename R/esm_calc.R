@@ -1,4 +1,4 @@
-esm.calc <-function(directory, tubeDelay, windspeed, interval, before.after, priority.interval){
+esm_calc <-function(directory, tubeDelay, windspeed, interval, before.after, priority.interval){
 
   aim.start <- -before.after
   aim.end <- before.after

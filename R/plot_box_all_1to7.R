@@ -1,4 +1,4 @@
-plot.box.all.1to7<-function(object){
+plot_box_all_1to7<-function(object){
 
   data.short <- data.frame(cbind(object[, 1:3], object[, 94:173]))
   data.clean <- data.short[!apply(is.na(data.short), 1, any),]
