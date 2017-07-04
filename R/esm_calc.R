@@ -1,3 +1,18 @@
+#' Calculate extended speed matrix from individual tracking events
+#'
+#' \code{esm_calc} collects the output from the tracking software and creates the extended speed matrix as a summary of a given experiment.
+#' Time of encounter with the odorant (i.e. the intersection of a tracked item and a linear model of odor travel) is determined for every item individually.
+#' After calculation of walking speed, individual speed trajectories are aligned to a common timeline. Tracking events will only be analyzed, if the timer contains
+#' neither intervals longer than 0.1s nor intervals of length 0. To account for edge effects, x-position values < 0.5 and > 19 are treated as \code{NA}
+#'
+#' @param directory A directory containing tracking raw data.
+#' @param tubeDelay a \code{double} specifying the delay (s) between the trigger to deliver the stimulus and the odor entering the glass tube.
+#' @param windspeed a \code{double} specifying the wind speed (cm/s) inside the glasse tubes.
+#' @param interval a \code{double} specifying the desired time interval (s) between two speed datapoints, typically 0.1s.
+#' @param before.after a \code{double} specifying the time (s) before and after odor encounter to analyze.
+#' @param priority.interval a vector specifying the time interval (s) during which the item has to be continually tracked to be considered for further analysis.
+#' @return extended speed matrix, a \code{data.frame}, will also be written to file \code{extendedSpeedMatrix.csv}
+#'
 esm_calc <-function(directory, tubeDelay, windspeed, interval, before.after, priority.interval){
 
   aim.start <- -before.after
