@@ -4,6 +4,12 @@ Updated versions can be found on the devel branch.
 
 # Installation using the devtools package
 ```r
+# install devtools
+install.packages("devtools")
+
+# install flywalkr 
 devtools::install_github("michathoma/flywalkr")
+
+# load flywalkr
 library(flywalkr)
 ```
