@@ -1,3 +1,11 @@
+#' Calculate mean net displacement per odor pulse.
+#'
+#' Calculate mean response per odor pulse in a given experiment. Can be used to check data for adaptation/habituation effects.
+#' Response is defined as the net displacement within 4s after odor encounter.
+#'
+#' @param object a \code{data.frame} as produced by \code{read.esm}
+#' @return a \code{data.frame}
+#'
 response_per_pulse<-function(object){
 
   data.short <- data.frame(cbind(object[, 1:3], object[, 104:144]))
