@@ -1,3 +1,11 @@
+#' Plot overview over the experiment across flies.
+#'
+#' Plot overview over the experiment across flies. First calculates median response time-courses per odorant within flies.
+#' From these, a boxplot including lines for mean and median time-courses per odorant across flies is created.
+#'
+#' @param object object a \code{data.frame} as produced by \code{read.esm}
+#' @return \code{speed_overview.pdf}
+#'
 plot_box_all_1to7<-function(object){
 
   data.short <- data.frame(cbind(object[, 1:3], object[, 94:173]))
