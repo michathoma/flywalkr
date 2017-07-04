@@ -95,13 +95,13 @@ plot_activity_all_median_1to7 <- function(object){
 	  xa <- seq(-0.95, 6.95, 0.1)
 	  xarev <- rev(xa)
 
-	  plot(x = seq(-0.95, 6.95, 0.1), y = mediodor, ylim = c(0, 1), main = odornew[k], col="black", type="n",
+	  plot(x = seq(-0.95, 6.95, 0.1), y = mediodor, ylim = c(0, 1), main = odornew[k], col = "black", type = "n",
 	     ylab="activity (%)",xlab="time (s)")
 
-	  polygon(x=c(xa,xarev),y=c(up,rev(dn)),col="grey80",border="grey80")
-	  lines(x=seq(-0.95,6.95,0.1),y=mediodor)
+	  polygon(x = c(xa,xarev), y = c(up, rev(dn)), col = "grey80", border = "grey80")
+	  lines(x = seq(-0.95, 6.95, 0.1), y = mediodor)
 
-	  lines(x=c(0,0),y=c(0,1))
+	  lines(x = c(0, 0), y = c(0, 1))
   }
 
   dev.off()
