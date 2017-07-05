@@ -30,6 +30,7 @@ esm_calc <-function(directory, tubeDelay, windspeed, interval, before.after, pri
   #### need a for-loop for tracking events here!!!!!!
 
   olddir <- getwd()
+  on.exit(setwd(olddir))
   setwd(directory)
   nfile <- dir()
 

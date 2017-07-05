@@ -12,6 +12,7 @@
 read_esm <- function(directory, delimiter = ";", parser = "_"){
 
   oldwd <- getwd()
+  on.exit(setwd(oldwd))
   setwd(directory)
 
   files <- dir()
@@ -29,6 +30,6 @@ read_esm <- function(directory, delimiter = ";", parser = "_"){
 
   combdata<-combdata[order(combdata$odour,combdata$fly.nr),]
 
-  setwd(oldwd)
+
   return(combdata)
 }
