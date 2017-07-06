@@ -5,7 +5,7 @@
 #'
 #' @param object object a \code{data.frame} as produced by \code{read.esm}.
 #' @return one \code{_overview.pdf} per fly analyzed.
-#'
+#' @export
 plot_trace_all_1to7 <- function(object){
 
   colnames(object) <- c("fly.nr", "odour", "pulse", seq(-9.95, 9.95, 0.1))

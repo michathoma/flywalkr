@@ -5,7 +5,7 @@
 #'
 #' @param object a \code{data.frame} as produced by \code{read.esm}
 #' @return a \code{data.frame}
-#'
+#' @export
 response_per_pulse<-function(object){
 
   data.short <- data.frame(cbind(object[, 1:3], object[, 104:144]))

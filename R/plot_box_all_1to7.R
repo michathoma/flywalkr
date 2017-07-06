@@ -5,7 +5,7 @@
 #'
 #' @param object object a \code{data.frame} as produced by \code{read.esm}
 #' @return \code{speed_overview.pdf}
-#'
+#' @export
 plot_box_all_1to7<-function(object){
 
   data.short <- data.frame(cbind(object[, 1:3], object[, 94:173]))

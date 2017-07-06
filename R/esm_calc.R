@@ -12,7 +12,7 @@
 #' @param before.after a \code{double} specifying the time (s) before and after odor encounter to analyze.
 #' @param priority.interval a vector specifying the time interval (s) during which the item has to be continually tracked to be considered for further analysis.
 #' @return extended speed matrix, a \code{data.frame}, will also be written to file \code{extendedSpeedMatrix.csv}
-#'
+#' @export
 esm_calc <-function(directory, tubeDelay, windspeed, interval, before.after, priority.interval){
 
   aim.start <- -before.after

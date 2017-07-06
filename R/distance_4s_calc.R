@@ -6,7 +6,7 @@
 #'
 #' @param object a \code{data.frame} as produced by \code{read.esm}
 #' @return a \code{data.frame} containing net replacement within 4s per fly and odor
-#'
+#' @export
 distance_4s_calc <- function(object){
 
   data.short <- data.frame(cbind(object[,1:3], object[,104:144]))

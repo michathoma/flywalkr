@@ -8,6 +8,7 @@
 #' @param delimiter delimiter used in extended speed matrizes, defaults to ";"
 #' @param parser pattern to parse file names for naming of individual flies
 #' @return \code{data.frame} containing combined data
+#' @export
 
 read_esm <- function(directory, delimiter = ";", parser = "_"){
 
