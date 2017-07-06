@@ -9,7 +9,6 @@
 #' @param parser pattern to parse file names for naming of individual flies
 #' @return \code{data.frame} containing combined data
 #' @export
-
 read_esm <- function(directory, delimiter = ";", parser = "_"){
 
   oldwd <- getwd()

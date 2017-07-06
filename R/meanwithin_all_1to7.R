@@ -7,7 +7,6 @@
 #' @param object a \code{data.frame} as produced by \code{read.esm}
 #' @return a \code{data.frame} containing mean response time-courses per fly and odor
 #' @export
-
 mean_within_all_1to7 <- function(object){
 
   data.short <- data.frame(cbind(object[,1:3], object[,94:173]))
