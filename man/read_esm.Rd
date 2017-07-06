@@ -9,8 +9,7 @@ read_esm(directory, delimiter = ";", parser = "_")
 \arguments{
 \item{directory}{directory containing extended speed matrizes}
 
-\item{delimiter}{delimiter used in extended speed matrizes, defaults to ";"
-(output from German MS Excel)}
+\item{delimiter}{delimiter used in extended speed matrizes, defaults to ";"}
 
 \item{parser}{pattern to parse file names for naming of individual flies}
 }

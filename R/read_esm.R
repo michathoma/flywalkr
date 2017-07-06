@@ -6,13 +6,14 @@
 #'
 #' @param directory directory containing extended speed matrizes
 #' @param delimiter delimiter used in extended speed matrizes, defaults to ";"
-#'   (output from German MS Excel)
 #' @param parser pattern to parse file names for naming of individual flies
 #' @return \code{data.frame} containing combined data
+#' @export
 
 read_esm <- function(directory, delimiter = ";", parser = "_"){
 
   oldwd <- getwd()
+  on.exit(setwd(oldwd))
   setwd(directory)
 
   files <- dir()
@@ -30,6 +31,6 @@ read_esm <- function(directory, delimiter = ";", parser = "_"){
 
   combdata<-combdata[order(combdata$odour,combdata$fly.nr),]
 
-  setwd(oldwd)
+
   return(combdata)
 }
